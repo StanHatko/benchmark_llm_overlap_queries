@@ -54,6 +54,7 @@ cat ~/test_diff_time.txt | grep real | perl -pe 's/.*0m//' | perl -pe 's/s$//'
 ```
 
 The time results are in the file `time_taken_4bit_diff.txt`.
+The time in seconds has mean 5.44607 and standard deviation 1.391389.
 
 ### Performance Test with Same
 
@@ -64,3 +65,6 @@ within each run the list is same, 50 threads:
 ./test_llm_detect_num_list_same.sh >~/test_same_log.txt 2>~/test_same_time.txt
 cat ~/test_same_time.txt | grep real | perl -pe 's/.*0m//' | perl -pe 's/s$//'
 ```
+
+The time results are in the file `time_taken_4bit_same.txt`.
+The time in seconds has mean 5.38266 and standard deviation 1.253483.
