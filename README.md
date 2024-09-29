@@ -27,5 +27,5 @@ Initial test of LLM:
 
 ```bash
 ./generate_detect_num_list.py /tmp/llm_test_basic 10 0
-./send_local_llm_query.py
+./send_local_llm_query.py /tmp/llm_test_basic_000.json
 ```
