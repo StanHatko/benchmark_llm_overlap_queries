@@ -51,6 +51,7 @@ def generate_detect_num_list(
         )
 
         out_file = f"{out_file_prefix}_{i:03}.json"
+        print("Save file:", out_file)
         with open(out_file, "w", encoding="UTF8") as f:
             json.dump(r, f)
 

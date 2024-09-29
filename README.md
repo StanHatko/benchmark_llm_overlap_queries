@@ -14,7 +14,9 @@ Setup the environment:
 ```bash
 pip install vllm openai fire
 pip install --upgrade jinja2
-git clone TODO
+
+git clone https://github.com/StanHatko/benchmark_llm_overlap_queries
+cd benchmark_llm_overlap_queries
 ```
 
 Start vLLM server:
