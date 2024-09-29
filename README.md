@@ -12,6 +12,7 @@ different list for different queries. Can be generated automatically and easy to
 Setup the environment:
 
 ```bash
+sudo apt install parallel
 pip install vllm openai fire
 pip install --upgrade jinja2
 
@@ -30,4 +31,8 @@ Initial test of LLM:
 ```bash
 ./generate_detect_num_list.py /tmp/llm_test_basic 10 0
 ./send_local_llm_query.py /tmp/llm_test_basic_000.json
+
+ls -1 /tmp/llm_test_basic_*.json
+ls -1 /tmp/llm_test_basic_*.json | parallel -j 10 ./send_local_llm_query.py
+time ( ls -1 /tmp/llm_test_basic_*.json | parallel -j 10 ./send_local_llm_query.py )
 ```
