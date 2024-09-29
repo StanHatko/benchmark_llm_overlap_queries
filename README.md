@@ -7,7 +7,13 @@ First test is to detect random number in list, both with same list of numbers fo
 different list for different queries. Can be generated automatically and easy to test.
 
 
-## Test on Lambda Labs GPU Instance
+## Test on Lambda Labs GPU Instance with 4-Bit Llama 3.1
+
+This test was done on a Lambda Labs gpu_1x_a100_sxm4 server in the Arizona, USA region.
+
+The 4-bit GPTQ quantized Llama 3.1 LLM was used for this test.
+
+### Environment Setup
 
 Setup the environment:
 
@@ -44,9 +50,10 @@ each list being different, 50 threads:
 
 ```bash
 ./test_llm_detect_num_list_diff.sh >~/test_diff_log.txt 2>~/test_diff_time.txt
+cat ~/test_diff_time.txt | grep real | perl -pe 's/.*0m//' | perl -pe 's/s$//'
 ```
 
-Will copy the time results to the repo.
+The time results are in the file `time_taken_4bit_diff.txt`.
 
 ### Performance Test with Same
 
