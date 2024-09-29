@@ -26,6 +26,6 @@ vllm serve hugging-quants/Meta-Llama-3.1-8B-Instruct-GPTQ-INT4 --host 127.0.0.1 
 Initial test of LLM:
 
 ```bash
-./generate_detect_num_list.py /tmp/llm_test.json 1 0
+./generate_detect_num_list.py /tmp/llm_test_basic 10 0
 ./send_local_llm_query.py
 ```

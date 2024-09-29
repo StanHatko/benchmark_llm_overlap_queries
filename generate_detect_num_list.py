@@ -3,6 +3,9 @@
 Generate LLM queries to see if number is in list.
 Purpose is to benchmark if overlapping strings improve
 speed, for instance by better using KV cache in VLLM.
+
+Use set of JSON files instead of list so easier to run
+in parallel with GNU parallel.
 """
 
 import json
@@ -12,7 +15,7 @@ import numpy as np
 
 
 def generate_detect_num_list(
-    out_file: str,
+    out_file_prefix: str,
     num_gen: int,
     make_same: int,
 ):
@@ -21,7 +24,6 @@ def generate_detect_num_list(
     Due to how fire package works, make make_same int instead of bool.
     """
 
-    queries = []
     check_list = None
     rgen = np.random.default_rng()
 
@@ -31,7 +33,7 @@ def generate_detect_num_list(
             check_list_str = ", ".join([str(x) for x in check_list])
 
         rnum = int(rgen.integers(0, 1000))
-        queries.append(
+        r = (
             [
                 {
                     "role": "system",
@@ -48,8 +50,9 @@ def generate_detect_num_list(
             ],
         )
 
-    with open(out_file, "w", encoding="UTF8") as f:
-        json.dump(queries, f)
+        out_file = f"{out_file_prefix}_{i:03}"
+        with open(out_file, "w", encoding="UTF8") as f:
+            json.dump(r, f)
 
 
 if __name__ == "__main__":
