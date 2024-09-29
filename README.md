@@ -43,15 +43,7 @@ Check time per run with 100 runs, with 100 entries generated per run,
 each list being different, 50 threads:
 
 ```bash
-rm -f /tmp/llm_test_*
-
-for i in $(seq 1 100);
-do
-    i=$(printf "%03d" $i)
-    echo $i
-    ./generate_detect_num_list.py /tmp/llm_test_diff_$i 100 0
-    time ( ls -1 /tmp/llm_test_diff_$i*.json | parallel -j 50 ./send_local_llm_query.py ) 
-done
+../test_llm_detect_num_list_diff.sh >~/test_speed_diff.txt
 ```
 
 Time taken (in seconds) in 10 runs:
