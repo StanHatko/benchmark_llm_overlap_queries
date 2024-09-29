@@ -7,11 +7,11 @@ First test is to detect random number in list, both with same list of numbers fo
 different list for different queries. Can be generated automatically and easy to test.
 
 
-## Test on Lambda Labs GPU Instance with 4-Bit Llama 3.1
+## Test on Lambda Labs GPU Instance with 4-Bit Llama 3.1 8B
 
 This test was done on a Lambda Labs gpu_1x_a100_sxm4 server in the Arizona, USA region.
 
-The 4-bit GPTQ quantized Llama 3.1 LLM was used for this test.
+The 4-bit GPTQ quantized Llama 3.1 8B LLM was used for this test.
 
 ### Environment Setup
 
