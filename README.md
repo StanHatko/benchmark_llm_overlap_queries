@@ -57,9 +57,10 @@ The time results are in the file `time_taken_4bit_diff.txt`.
 
 ### Performance Test with Same
 
-Test with 1000 entries generated, all same, 50 threas:
+Check time per run with 100 runs, with 100 entries generated per run,
+within each run the list is same, 50 threads:
 
 ```bash
-./generate_detect_num_list.py /tmp/llm_test_same_01 1000 1
-time ( ls -1 /tmp/llm_test_basic_*.json | parallel -j 50 ./send_local_llm_query.py )
+./test_llm_detect_num_list_same.sh >~/test_same_log.txt 2>~/test_same_time.txt
+cat ~/test_same_time.txt | grep real | perl -pe 's/.*0m//' | perl -pe 's/s$//'
 ```
