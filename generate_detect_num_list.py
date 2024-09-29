@@ -33,22 +33,20 @@ def generate_detect_num_list(
             check_list_str = ", ".join([str(x) for x in check_list])
 
         rnum = int(rgen.integers(0, 1000))
-        r = (
-            [
-                {
-                    "role": "system",
-                    "content": "Determine if the specified number is in the list.",
-                },
-                {
-                    "role": "User",
-                    "content": f"The list is: {check_list_str}.",
-                },
-                {
-                    "role": "User",
-                    "content": f"The number is: {rnum}.",
-                },
-            ],
-        )
+        r = [
+            {
+                "role": "system",
+                "content": "Determine if the specified number is in the list.",
+            },
+            {
+                "role": "User",
+                "content": f"The list is: {check_list_str}.",
+            },
+            {
+                "role": "User",
+                "content": f"The number is: {rnum}.",
+            },
+        ]
 
         out_file = f"{out_file_prefix}_{i:03}.json"
         print("Save file:", out_file)

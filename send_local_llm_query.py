@@ -23,7 +23,7 @@ def send_query(prompt_file: str, output_file: str):
         api_key="EMPTY",
         base_url="http://localhost:8000/v1",
     )
-    completion = client.completions.create(
+    completion = client.chat.completions.create(
         messages,
         model="hugging-quants/Meta-Llama-3.1-8B-Instruct-GPTQ-INT4",
     )
