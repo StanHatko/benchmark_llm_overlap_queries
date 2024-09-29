@@ -36,3 +36,29 @@ ls -1 /tmp/llm_test_basic_*.json
 ls -1 /tmp/llm_test_basic_*.json | parallel -j 10 ./send_local_llm_query.py
 time ( ls -1 /tmp/llm_test_basic_*.json | parallel -j 10 ./send_local_llm_query.py )
 ```
+
+### Performance Test with Different
+
+Test with 1000 entries generated, all different, 50 threads:
+
+```bash
+./generate_detect_num_list.py /tmp/llm_test_diff_01 1000 0
+time ( ls -1 /tmp/llm_test_basic_*.json | parallel -j 50 ./send_local_llm_query.py )
+```
+
+Time taken (in seconds) in 10 runs:
+
+* 5.806
+
+### Performance Test with Same
+
+Test with 1000 entries generated, all same, 50 threas:
+
+```bash
+./generate_detect_num_list.py /tmp/llm_test_same_01 1000 1
+time ( ls -1 /tmp/llm_test_basic_*.json | parallel -j 50 ./send_local_llm_query.py )
+```
+
+Time taken (in seconds) in 10 runs: 
+
+* 5.559s
