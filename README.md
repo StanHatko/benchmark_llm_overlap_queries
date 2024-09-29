@@ -43,12 +43,10 @@ Check time per run with 100 runs, with 100 entries generated per run,
 each list being different, 50 threads:
 
 ```bash
-../test_llm_detect_num_list_diff.sh >~/test_speed_diff.txt
+./test_llm_detect_num_list_diff.sh >~/test_diff_log.txt 2>~/test_diff_time.txt
 ```
 
-Time taken (in seconds) in 10 runs:
-
-* 5.806
+Will copy the time results to the repo.
 
 ### Performance Test with Same
 
@@ -58,7 +56,3 @@ Test with 1000 entries generated, all same, 50 threas:
 ./generate_detect_num_list.py /tmp/llm_test_same_01 1000 1
 time ( ls -1 /tmp/llm_test_basic_*.json | parallel -j 50 ./send_local_llm_query.py )
 ```
-
-Time taken (in seconds) in 10 runs: 
-
-* 5.559s
