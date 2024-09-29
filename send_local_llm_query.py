@@ -5,16 +5,18 @@ Send query to localhost VLLM server, for test purposes.
 
 
 import json
+import time
 
 import fire
 from openai import OpenAI
 
 
-def send_query(prompt_file: str, output_file: str):
+def send_query(prompt_file: str):
     """
     Send query to localhost LLM server and get response.
     """
 
+    time_start = time.time()
     print("Load input file:", prompt_file)
     with open(prompt_file, "r", encoding="UTF8") as f:
         messages = json.load(f)
@@ -24,11 +26,13 @@ def send_query(prompt_file: str, output_file: str):
         base_url="http://localhost:8000/v1",
     )
     completion = client.chat.completions.create(
-        messages,
+        messages=messages,
         model="hugging-quants/Meta-Llama-3.1-8B-Instruct-GPTQ-INT4",
     )
+
     print("Completion result:", completion)
-    breakpoint()
+    time_end = time.time()
+    print(f"Time taken: {round(time_end - time_start, 2)} seconds.")
 
 
 if __name__ == "__main__":
