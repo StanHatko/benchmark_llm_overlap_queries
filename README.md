@@ -29,7 +29,7 @@ cd benchmark_llm_overlap_queries
 Start vLLM server:
 
 ```bash
-vllm serve hugging-quants/Meta-Llama-3.1-8B-Instruct-GPTQ-INT4 --host 127.0.0.1 --port 8000
+vllm serve hugging-quants/Meta-Llama-3.1-8B-Instruct-GPTQ-INT4 --host 127.0.0.1 --port 8000 --enable-prefix-caching
 ```
 
 Initial test of LLM:
