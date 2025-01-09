@@ -13,6 +13,10 @@ This test was done on a Lambda Labs gpu_1x_a100_sxm4 server in the Arizona, USA 
 
 The 4-bit GPTQ quantized Llama 3.1 8B LLM was used for this test.
 
+**The test run was with old vllm and without `--enable-prefix-caching` option set, so not valid for current vllm.**
+**Need to rerun test with the updated vllm and `--enable-prefix-caching` as shown below.**
+**Once rerun, update the results below.**
+
 ### Environment Setup
 
 Setup the environment:
