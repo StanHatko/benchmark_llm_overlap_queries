@@ -19,6 +19,9 @@ The 4-bit GPTQ quantized Llama 3.1 8B LLM was used for this test.
 
 ### Environment Setup
 
+Following steps done in conda environment with Python 3.12.
+Without conda environment the vLLM server didn't work properly (errors with undefined symbols occurred).
+
 Setup the environment:
 
 ```bash
