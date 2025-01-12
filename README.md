@@ -9,7 +9,7 @@ different list for different queries. Can be generated automatically and easy to
 
 ## Test on Lambda Labs GPU Instance with 4-Bit Llama 3.1 8B
 
-This test was done on a Lambda Labs gpu_1x_a100_sxm4 server in the Arizona, USA region.
+This test was done on a Lambda Labs gpu_1x_a100_sxm4 server in the Virginia, USA region.
 
 The 4-bit GPTQ quantized Llama 3.1 8B LLM was used for this test.
 
@@ -60,8 +60,8 @@ each list being different, 50 threads:
 cat ~/test_diff_time.txt | grep real | perl -pe 's/.*0m//' | perl -pe 's/s$//'
 ```
 
-The time results are in the file `time_taken_4bit_diff.txt`.
-The time in seconds has mean 5.44607 and standard deviation 1.391389.
+The time results are in the file `time-taken-4bit-diff.txt`.
+The time in seconds has mean $6.45708$ and standard deviation $0.5997773$.
 
 ### Performance Test with Same
 
@@ -73,5 +73,5 @@ within each run the list is same, 50 threads:
 cat ~/test_same_time.txt | grep real | perl -pe 's/.*0m//' | perl -pe 's/s$//'
 ```
 
-The time results are in the file `time_taken_4bit_same.txt`.
-The time in seconds has mean 5.38266 and standard deviation 1.253483.
+The time results are in the file `time-taken-4bit-same.txt`.
+The time in seconds has mean $4.58922$ and standard deviation $0.591287$.
