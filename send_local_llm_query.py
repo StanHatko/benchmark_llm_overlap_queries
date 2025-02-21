@@ -29,6 +29,7 @@ def send_query(prompt_file: str):
         messages=messages,
         model="lambdalabs/Llama-3.3-70B-Instruct-AWQ-4bit",
         max_tokens=256,
+        temperature=0,
     )
 
     print("Completion result:", completion)
