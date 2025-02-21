@@ -6,6 +6,12 @@ does this affect vLLM performance? Check this with some experiments.
 First test is to detect random number in list, both with same list of numbers for each query vs.
 different list for different queries. Can be generated automatically and easy to test.
 
+This is an extreme example of when prefix caching causes performance benefits,
+with a long input query that for the "same" examples is mostly fixed between queries
+and a short output. Most practical examples will see much less performance improvement
+than this. Still, this is useful in demonstrating that the performance increase with
+prefix caching is real.
+
 
 ## Test on RunPod GPU Instance with 4-Bit Llama 3.3 70B
 
