@@ -65,7 +65,7 @@ cat ~/test_diff_time.txt | grep real | perl -pe 's/.*0m//' | perl -pe 's/s$//'
 ```
 
 The time results are in the file `time-taken-test2-diff.txt`.
-The time in seconds has mean $TODO$ and standard deviation $TODO$.
+The time in seconds has mean $32.89707$ and standard deviation $1.011802$.
 
 ### Performance Test with Same
 
@@ -78,7 +78,11 @@ cat ~/test_same_time.txt | grep real | perl -pe 's/.*0m//' | perl -pe 's/s$//'
 ```
 
 The time results are in the file `time-taken-test2-same.txt`.
-The time in seconds has mean $TODO$ and standard deviation $TODO$.
+The time in seconds has mean $5.77354$ and standard deviation $0.6591126$.
+
+The performance benefit of same is far larger with the bigger model than the
+smaller model below. This makes sense as a big model has greater benefits from
+caching large parts of the query than a small model.
 
 
 ## Test on Lambda Labs GPU Instance with 4-Bit Llama 3.1 8B (Old Test)
