@@ -27,6 +27,9 @@ python -m pip install -U pip setuptools wheel
 
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
 pip install vllm openai fire
+
+git clone https://github.com/StanHatko/benchmark_llm_overlap_queries
+cd benchmark_llm_overlap_queries
 ```
 
 Start vLLM server:

@@ -27,7 +27,7 @@ def send_query(prompt_file: str):
     )
     completion = client.chat.completions.create(
         messages=messages,
-        model="hugging-quants/Meta-Llama-3.1-8B-Instruct-GPTQ-INT4",
+        model="lambdalabs/Llama-3.3-70B-Instruct-AWQ-4bit",
         max_tokens=256,
     )
 
