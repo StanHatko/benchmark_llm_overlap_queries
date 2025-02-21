@@ -61,7 +61,7 @@ each list being different, 50 threads:
 cat ~/test_diff_time.txt | grep real | perl -pe 's/.*0m//' | perl -pe 's/s$//'
 ```
 
-The time results are in the file `time-taken-4bit-diff.txt`.
+The time results are in the file `time-taken-test2-diff.txt`.
 The time in seconds has mean $TODO$ and standard deviation $TODO$.
 
 ### Performance Test with Same
@@ -74,7 +74,7 @@ within each run the list is same, 50 threads:
 cat ~/test_same_time.txt | grep real | perl -pe 's/.*0m//' | perl -pe 's/s$//'
 ```
 
-The time results are in the file `time-taken-4bit-same.txt`.
+The time results are in the file `time-taken-test2-same.txt`.
 The time in seconds has mean $TODO$ and standard deviation $TODO$.
 
 
@@ -127,7 +127,7 @@ each list being different, 50 threads:
 cat ~/test_diff_time.txt | grep real | perl -pe 's/.*0m//' | perl -pe 's/s$//'
 ```
 
-The time results are in the file `time-taken-4bit-diff.txt`.
+The time results are in the file `time-taken-test1-diff.txt`.
 The time in seconds has mean $6.45708$ and standard deviation $0.5997773$.
 
 ### Performance Test with Same
@@ -140,5 +140,5 @@ within each run the list is same, 50 threads:
 cat ~/test_same_time.txt | grep real | perl -pe 's/.*0m//' | perl -pe 's/s$//'
 ```
 
-The time results are in the file `time-taken-4bit-same.txt`.
+The time results are in the file `time-taken-test1-same.txt`.
 The time in seconds has mean $4.58922$ and standard deviation $0.591287$.
