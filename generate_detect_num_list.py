@@ -30,7 +30,7 @@ def generate_detect_num_list(
     for i in range(num_gen):
         if (make_same == 0) or (i == 0):
             check_list = rgen.integers(0, 1000, size=100)
-            check_list_str = ", ".join([str(x) for x in check_list])
+        check_list_str = ", ".join([str(x) for x in check_list])
 
         rnum = int(rgen.integers(0, 1000))
         r = [
